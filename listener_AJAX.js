@@ -6,12 +6,7 @@
             this.addEventListener('load', function() {
                 //выполняем нужные действия, когда запрос отправится
                 if(this.status === 200) {
-                    dataLayer.push({
-                        'event': 'GAEvents',
-                        'eventCategory': 'Registration',
-                        'eventAction': 'sendSuccess',
-                        'eventLabel': 'form'
-                    });
+                    console.log(arguments);
                 }
             });
             return send.apply(this, arguments);
