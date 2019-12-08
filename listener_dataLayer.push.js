@@ -1,4 +1,3 @@
-// <script>
 (function() {
     var dlCounter = 0;
     (function dlSearch() {
@@ -6,7 +5,7 @@
             var originalPush = window.dataLayer.push;
             window.dataLayer.push = function() {
                 originalPush.apply(this, arguments);
-                //выполняем действия в зависимости от значений аргументов dataLayer.push()
+                // Выполняем нужные действия
                 console.log({
                     'event': 'dataLayer.push was intercepted',
                     'event_param': arguments
@@ -20,4 +19,3 @@
         }
     })();
 })();
-// </script>

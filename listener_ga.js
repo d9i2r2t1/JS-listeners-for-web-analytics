@@ -1,4 +1,3 @@
-// <script>
 (function() {
     var gCounter = 0;
     (function gSearch() {
@@ -6,17 +5,11 @@
             var original_ga = window.ga;
             window.ga = function() {
                 original_ga.apply(this, arguments);
-                //выполняем действия в зависимости от значений аргументов ga()
-                if (arguments[2] === 'Подключение') {
-                    dataLayer.push({
-                        'event': 'connection_ym'
-                    });
-                }
-                if (arguments[4] == 'Покупка') {
-                    dataLayer.push({
-                        'event': 'purchase_ym'
-                    });               
-                }
+                // Выполняем нужные действия
+                console.log({
+                    'event': 'ga() was intercepted',
+                    'event_param': arguments
+                }); 
             };
             window.ga_listener = 1;
         }
@@ -26,4 +19,3 @@
         }
     })();
 })();
-// </script>

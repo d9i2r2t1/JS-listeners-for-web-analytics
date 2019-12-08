@@ -1,4 +1,3 @@
-// <script>
 (function() {
     var counter_id = 123456789;
     var yaCounter = 0;
@@ -7,9 +6,9 @@
             var original_yaReachGoal = window['yaCounter' + counter_id].reachGoal;
             window['yaCounter' + counter_id].reachGoal = function() {
                 original_yaReachGoal.apply(this, arguments);
-                //выполняем действия в зависимости от значений аргументов yaCounterXXXXXXXX.reachGoal()
+                // Выполняем нужные действия
                 console.log({
-                    'event': 'metrika',
+                    'event': 'yandex metrika reachGoal() was intercepted',
                     'event_param': arguments
                 });    
             };
@@ -21,4 +20,3 @@
         }
     })();
 })();
-// </script>

@@ -1,4 +1,3 @@
-// <script>
 // gtag() используется, например, для динамического ремаркетинга Google Ads
 (function() {
     var gCounter = 0;
@@ -7,8 +6,11 @@
             var original_gtag = window.gtag;
             window.gtag = function() {
                 original_gtag.apply(this, arguments);
-                //выполняем действия в зависимости от значений аргументов gtag()
-                console.log(arguments);
+                // Выполняем нужные действия
+                console.log({
+                    'event': 'gtag() was intercepted',
+                    'event_param': arguments
+                }); 
             };
             window.gtag_listener = 1;
         }
@@ -18,4 +20,3 @@
         }
     })();
 })();
-// </script>

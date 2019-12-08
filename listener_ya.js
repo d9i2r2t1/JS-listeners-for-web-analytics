@@ -1,4 +1,3 @@
-// <script>
 (function() {
     var yaCounter = 0;
     function yaSearch() {
@@ -6,10 +5,10 @@
             window.zm = window.ym;
             window.ym = function() {
                 window.zm.a.push(arguments);
-                //выполняем действия в зависимости от значений аргументов ya()
+                // Если перехватили метод reachGoal - выполняем нужные действия
                 if (arguments[1] === 'reachGoal') {
                     console.log({
-                        'event': 'metrika',
+                        'event': 'yandex metrika reachGoal() was intercepted',
                         'event_param': arguments[2]
                     });    
                 }
@@ -23,4 +22,3 @@
     }
     setTimeout(yaSearch, 1000);
 })();
-// </script>
